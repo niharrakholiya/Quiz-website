@@ -46,13 +46,13 @@ body{
     color: deeppink;
 }
 
-.main{
-    background:url('background.jpg') no-repeat;
-    min-height: 100vh;
-    background-size: cover;
-    background-position:center;
-    transition: .3s ease;
-}
+
+    .main {
+        background: url('background.jpg') no-repeat center/cover;
+        min-height: 100vh;
+        transition: background .3s ease; /* Use 'background' shorthand for the transition */
+    }
+
 .main.active{
     filter: blur(15px);
     pointer-events: none;
