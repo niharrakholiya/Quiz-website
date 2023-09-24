@@ -94,6 +94,7 @@ function questionCounter(index)
 function optionSelected(answer){
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
+    
     let alloptions = optionList.children.length;
     if(userAnswer === correctAnswer){
          answer.classList.add('correct');

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Quiz Website</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <style>
+        form{
+            font-size: xx-large;
+        }
+    </style>
+<main class="main">
+    <header class="header">
+        <a href="index.html">Home</a>
+        <a href="#" class="active">Admin</a>
+    </header>
+    <section class="admin-section">
+        <div class="admin-box">
+            <h1>Admin Panel - Questions</h1>
+            <!-- Add a form for adding questions -->
+            <form id="questionForm">
+                <label for="question">Question:</label>
+                <input type="text" id="question" name="question" required><br><br>
+                <label for="options1">Option1:</label>
+                <input type="text" id="options1" name="options1" required><br><br>
+                <label for="options2">Option2:</label>
+                <input type="text" id="options2" name="options2" required><br><br>
+                <label for="options3">Option3:</label>
+                <input type="text" id="options3" name="options3" required><br><br>
+                <label for="options4">Option4:</label>
+                <input type="text" id="options4" name="options4" required><br><br>
+                <label for="answer">Correct Answer (A, B, C, or D):</label>
+                <input type="text" id="answer" name="answer" required><br><br>
+                <button type="submit">Add Question</button>
+            </form>
+
+            <div class="question-list">
+                <h2>Questions:</h2>
+                <ul id="questionList"></ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

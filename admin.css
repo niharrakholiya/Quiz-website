@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: wght@300; 400;500; 600; 700; 800; 900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+.header{
+    position: fixed;
+    padding: 20px 10%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    z-index:100;
+}
+.logo{
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+}
+.navbar a{
+    font-size:18px;
+    text-decoration:none;
+    color: white;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: deeppink;
+}
+
+/* Add your admin panel styles here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #09001d;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.main {
+    min-height: 100vh;
+    transition: background .3s ease; /* Use 'background' shorthand for the transition */
+}
+
+.admin-section {
+    padding: 50px;
+}
+
+/* Rest of your styles remain the same */
+
+
+/* Add your admin panel styles here */
+/* ... */
+
+
+.admin-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #c40094;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a30075;
+}
+
+.question-list {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
