@@ -75,11 +75,10 @@ const optionList = document.querySelector('.option-list');
 function showQuestion(index){
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${questions[index].numb}.${questions[index].question}`;
-    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
+    optionList.innerHTML = `<div class="option"><span>${questions[index].options[0]}</span></div>
                             <div class="option"><span>${questions[index].options[1]}</span></div>
                              <div class="option"><span>${questions[index].options[2]}</span></div>
                              <div class="option"><span>${questions[index].options[3]}</span></div>`;
-    optionList.innerHTML = optionTag;
     const option = document.querySelectorAll('.option');
     for(let i = 0;i<option.length;i++){
         option[i].setAttribute('onclick','optionSelected(this)');
@@ -96,7 +95,7 @@ function optionSelected(answer){
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
     let alloptions = optionList.children.length;
-    if(userAnswer == correctAnswer){
+    if(userAnswer === correctAnswer){
          answer.classList.add('correct');
          userScore+=1;
          headerScore();
@@ -104,7 +103,7 @@ function optionSelected(answer){
     else{
         answer.classList.add('incorrect');
         for (let i=0;i<alloptions;i++){
-            if(optionList.children[i].textContent == correctAnswer){
+            if(optionList.children[i].textContent === correctAnswer){
                 optionList.children[i].setAttribute('class','option correct');
             }
         }
@@ -137,7 +136,7 @@ function showresultBox(){
          progressValue.textContent = `${progressStartValue}%`;
          circularProgress.style.background =`conic-gradient(#c40094,${progressStartValue* 3.6}deg, rgba(255,255,255,.1) 0deg)`;
 
-         if(progressStartValue == progressEndValue){
+         if(progressStartValue === progressEndValue){
              clearInterval(progress);
          }
     },speed)
