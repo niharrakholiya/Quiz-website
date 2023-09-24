@@ -1,54 +1,32 @@
-let questions = [
-    {
-        numb: 1,
-        question: "What does HTML stand for?",
-        answer: "C. Hyper Text Markup Language",
-        options: [
-            "A. Hyper Type Multi Language",
-            "B. Hyper Text Multiple Language",
-            "C. Hyper Text Markup Language",
-            "D. Home Text Multi Language"
-        ]
-    },
-]
-function displayQuestions() {
-    const questionList = document.getElementById('questionList');
-    questionList.innerHTML = '';
-    questions.forEach((question, index) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${index + 1}. ${question.question}`;
-        questionList.appendChild(listItem);
-    });
+let questions = [];
+function addQuestion(question, options, answer) {
+   let questionObj = {
+          question: question,
+          options: options,
+          answer: answer
+   };
+     questions.push(questionObj);
+     localStorage.setItem("questions", JSON.stringify(questions));
 }
+//how to get value of input field in after form submission
+let form = document.getElementById("questionForm");
+form.addEventListener("submit", function(event) {
+// event.preventDefault();
 
-function handleFormSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const question = form.question.value;
-    const options = [
-        form.options1.value,
-        form.options2.value,
-        form.options3.value,
-        form.options4.value
-    ];
-    const answer = form.answer.value.toUpperCase();
+let question = document.getElementById("question").value;
+console.log(question);
+let options=[];
+options.push(document.getElementById("options1").value);
+options.push(document.getElementById("options2").value);
+options.push(document.getElementById("options3").value);
+options.push(document.getElementById("options4").value);
+let answer = document.getElementById("answer").value;
+console.log(answer);
+console.log(options);
+addQuestion(question, options, answer);
 
-    const newQuestion = {
-        numb: questions.length + 1,
-        question,
-        options,
-        answer
-    };
-
-    questions.push(newQuestion);
-
-    form.reset();
-
-    displayQuestions();
+});
+if(localStorage.getItem("questions") !== null) {
+questions = JSON.parse(localStorage.getItem("questions"));
+console.log(questions);
 }
-
-const questionForm = document.getElementById('questionForm');
-questionForm.addEventListener('submit', handleFormSubmit);
-
-// Display the initial set of questions
-displayQuestions();
