@@ -7,7 +7,14 @@
     font-family: 'Poppins',sans-serif;
 }
 
-
+body {
+    color: #fff;
+    background: #09001d;
+    /*overflow-y: auto; !* Enable vertical scrolling *!*/
+}
+body,html{
+    scroll-behavior: smooth;
+}
 .header{
     position: fixed;
     padding: 20px 10%;
@@ -35,27 +42,12 @@
     margin-left: 35px;
     transition: .3s;
 }
-
 .navbar a:hover,
 .navbar a.active{
     color: deeppink;
 }
-
-/* Add your admin panel styles here */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    color: #fff;
-    background: #09001d;
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
 .main {
+    background: url('background.jpg') no-repeat center/cover;
     min-height: 100vh;
     transition: background .3s ease; /* Use 'background' shorthand for the transition */
 }
